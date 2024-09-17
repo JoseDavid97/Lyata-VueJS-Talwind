@@ -1,6 +1,7 @@
 <script setup>
 
 import { ref } from 'vue'
+import axios from 'axios';
 
 const query = ref('')
 const options = {method: "GET"};

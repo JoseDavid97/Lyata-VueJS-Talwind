@@ -12,6 +12,7 @@ Requeremientos:
 "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
     "vite": "^5.4.1",
