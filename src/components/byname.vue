@@ -1,22 +1,18 @@
 <script setup>
 
 import { ref } from 'vue'
-import axios from 'axios';
 
 const query = ref('')
-const options = {method: "GET"};
-const url = "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query="
+const access_key = 'fda9a082754effbe07d94037bad31d83'
 
 function checkWeather(){
     
+    this.$axios.get('/current?access_key='+access_key+'&query='+query).then(response => {
+            console.log(response.data);
+        }).catch(error => {
+            console.error("Hubo un error en la solicitud: ", error);
+        });
     console.log(query._value);
-
-    try {
-        fetch(url+query._value, options).then((response) => response.json())
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
 
 }
 

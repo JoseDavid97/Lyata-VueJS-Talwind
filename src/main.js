@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
+import { axiosInstance } from './axios.js';
 import './style.css'
 
 import App from './App.vue'
@@ -23,4 +24,8 @@ const routes = [
     routes,
 })
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+
+app.config.globalProperties.platform = "Holaa"
+app.use(router)
+app.mount('#app')
